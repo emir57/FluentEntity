@@ -35,13 +35,15 @@ namespace FluentEntity_ConsoleApp.FEntity
         protected void SetProperty(string propertyName, object value)
         {
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
-
-            if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
-
+            CheckExceptions(propertyInfo);
             propertyInfo.SetValue(entity, value);
             //if (propertyInfo.PropertyType != value.GetType())
             //    throw new ArgumentFluentEntityException($"propertyType: {propertyInfo.PropertyType} valueType: {value.GetType()} cannot ne converted");
 
+        }
+        protected void CheckExceptions(PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
         }
     }
 }
