@@ -1,5 +1,6 @@
 ﻿using FluentEntity_ConsoleApp.Entities;
 using FluentEntity_ConsoleApp.FEntity;
+using FluentEntity_ConsoleApp.FEntity2;
 using System;
 
 namespace FluentEntity_ConsoleApp
@@ -8,7 +9,7 @@ namespace FluentEntity_ConsoleApp
     {
         static void Main(string[] args)
         {
-            User user = new FluentEntity<User>()
+            User user = new FluentEntity2<User>()
                 .AddParameter(u => u.Id, 1)
                 .AddParameter(u => u.FirstName, "Emir")
                 .AddParameter(u => u.LastName, "Gürbüz")
