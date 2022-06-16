@@ -1,4 +1,4 @@
-﻿using FluentEntity_ConsoleApp.Exceptions;
+﻿using FluentEntity_ConsoleApp.FluentExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -20,7 +20,7 @@ namespace FluentEntity_ConsoleApp.FEntity
             string propertyName = (exp.Body as MemberExpression).Member.Name;
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
 
-            if (propertyInfo == null) throw new FluentException();
+            if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
 
             propertyInfo.SetValue(entity, value);
             return this;
@@ -29,7 +29,7 @@ namespace FluentEntity_ConsoleApp.FEntity
         {
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
 
-            if (propertyInfo == null) throw new FluentException("Property Not Found");
+            if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
 
             propertyInfo.SetValue(entity, value);
             return this;
