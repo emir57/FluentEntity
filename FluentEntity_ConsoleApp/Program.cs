@@ -9,7 +9,7 @@ namespace FluentEntity_ConsoleApp
         static void Main(string[] args)
         {
             User user = new FluentEntity<User>()
-                .AddParameter("Id", "asd")
+                .AddParameter("Id", 1)
                 .AddParameter(u => u.FirstName, "Emir")
                 .AddParameter(u => u.LastName, "Gürbüz")
                 .AddParameter(u => u.EmailConfirm, true)

@@ -37,9 +37,11 @@ namespace FluentEntity_ConsoleApp.FEntity
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
 
             if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
-            if (propertyInfo.PropertyType != value.GetType())
-                throw new ArgumentFluentEntityException($"propertyType: {propertyInfo.PropertyType} valueType: {value.GetType()} cannot ne converted");
+
             propertyInfo.SetValue(entity, value);
+            //if (propertyInfo.PropertyType != value.GetType())
+            //    throw new ArgumentFluentEntityException($"propertyType: {propertyInfo.PropertyType} valueType: {value.GetType()} cannot ne converted");
+
         }
     }
 }
