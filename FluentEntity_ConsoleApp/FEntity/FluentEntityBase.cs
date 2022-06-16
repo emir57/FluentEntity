@@ -28,7 +28,10 @@ namespace FluentEntity_ConsoleApp.FEntity
         }
         public virtual FluentEntityBase<T> AddParameters<P>(object value)
         {
-
+            PropertyInfo[] propertyInfos = entity.GetType().GetProperties();
+            foreach (PropertyInfo propertyInfo in propertyInfos)
+                if (propertyInfo.GetType() == typeof(P))
+                    propertyInfo.SetValue(entity, value);
             return this;
         }
 
