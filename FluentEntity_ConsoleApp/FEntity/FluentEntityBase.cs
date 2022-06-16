@@ -30,7 +30,7 @@ namespace FluentEntity_ConsoleApp.FEntity
         {
             PropertyInfo[] propertyInfos = entity.GetType().GetProperties();
             foreach (PropertyInfo propertyInfo in propertyInfos)
-                if (propertyInfo.GetType() == typeof(P))
+                if (propertyInfo.PropertyType == typeof(P))
                     propertyInfo.SetValue(entity, value);
             return this;
         }

@@ -10,8 +10,7 @@ namespace FluentEntity_ConsoleApp
         {
             User user = new FluentEntity<User>()
                 .AddParameter("Id", 1)
-                .AddParameter(u => u.FirstName, "Emir")
-                .AddParameter(u => u.LastName, "Gürbüz")
+                .AddParameters<string>("bu bir string")
                 .AddParameter(u => u.EmailConfirm, true)
                 .AddParameter(u => u.CreatedDate, DateTime.Now)
                 .AddParameter(u => u.UpdatedDate, DateTime.Now.AddMinutes(5))
