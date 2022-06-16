@@ -14,7 +14,7 @@ namespace FluentEntity_ConsoleApp.FEntity2
         {
             entity = new T();
         }
-        public FluentEntityBase<T> AddParameter<P>(Expression<Func<T, P>> exp, object value)
+        public virtual FluentEntityBase<T> AddParameter<P>(Expression<Func<T, P>> exp, object value)
         {
             string propertyName = (exp.Body as MemberExpression).Member.Name;
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
