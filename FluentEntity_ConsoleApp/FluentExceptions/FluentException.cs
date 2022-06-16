@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace FluentEntity_ConsoleApp.Exceptions
+namespace FluentEntity_ConsoleApp.FluentExceptions
 {
     public class FluentException : Exception
     {
