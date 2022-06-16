@@ -17,7 +17,7 @@ namespace FluentEntity_ConsoleApp.FEntity
         }
         public FluentEntityBase(T entity)
         {
-
+            _entity = entity;
         }
         public virtual FluentEntityBase<T> AddParameter<P>(Expression<Func<T, P>> exp, object value)
         {
