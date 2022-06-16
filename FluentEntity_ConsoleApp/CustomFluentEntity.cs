@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 
 namespace FluentEntity_ConsoleApp
@@ -17,6 +18,12 @@ namespace FluentEntity_ConsoleApp
             if(value.GetType() == typeof(string))
                 Console.WriteLine($"string--{value}--");
             return base.AddParameter(exp, value);
+        }
+
+        protected override void CheckExceptions(PropertyInfo propertyInfo)
+        {
+            //custom exceptions
+            base.CheckExceptions(propertyInfo);
         }
     }
 }
