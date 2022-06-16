@@ -43,6 +43,12 @@ namespace FluentEntity_ConsoleApp.FEntity
             SetProperty(propertyName, value);
             return this;
         }
+        /// <summary>
+        /// assigns values to all properties of the selected type
+        /// </summary>
+        /// <typeparam name="P"></typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public virtual FluentEntityBase<T> AddParameters<P>(object value)
         {
             PropertyInfo[] propertyInfos = _entity.GetType().GetProperties();
