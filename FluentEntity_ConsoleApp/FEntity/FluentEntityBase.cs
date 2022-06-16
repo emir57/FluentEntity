@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace FluentEntity_ConsoleApp.FEntity2
+namespace FluentEntity_ConsoleApp.FEntity
 {
     public abstract class FluentEntityBase<T>
         where T : class, new()
