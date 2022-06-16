@@ -7,6 +7,7 @@ using System.Text;
 namespace FluentEntity_ConsoleApp.FluentEntity
 {
     public class FluentEntity<T> : IFluentEntity<T>
+        where T : class, new()
     {
         private T entity;
         public FluentEntity()
