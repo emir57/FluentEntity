@@ -26,6 +26,11 @@ namespace FluentEntity_ConsoleApp.FEntity
             SetProperty(propertyName, value);
             return this;
         }
+        public virtual FluentEntityBase<T> AddParameters<P>(object value)
+        {
+
+            return this;
+        }
 
         public T GetEntity() => entity;
 
