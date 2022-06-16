@@ -38,7 +38,10 @@ namespace FluentEntity_ConsoleApp.FEntity
                     propertyInfo.SetValue(_entity, value);
             return this;
         }
-
+        /// <summary>
+        /// return entity with values
+        /// </summary>
+        /// <returns></returns>
         public T GetEntity() => _entity;
 
         protected virtual void SetProperty(string propertyName, object value)
