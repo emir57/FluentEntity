@@ -15,7 +15,7 @@ namespace FluentEntity_ConsoleApp.FluentEntity
         }
         public IFluentEntity<T> AddParameter<P>(Expression<Func<T, P>> exp, object value)
         {
-            var propertyName = (exp.Body as MemberExpression).Member.Name;
+            string propertyName = (exp.Body as MemberExpression).Member.Name;
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
             propertyInfo.SetValue(entity, value);
             return this;
