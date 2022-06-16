@@ -8,8 +8,8 @@ namespace FluentEntity_ConsoleApp
     {
         static void Main(string[] args)
         {
-            User user = new CustomFluentEntity<User>()
-                .AddParameter("Idd", 1)
+            User user = new FluentEntity<User>()
+                .AddParameter("Id", "asd")
                 .AddParameter(u => u.FirstName, "Emir")
                 .AddParameter(u => u.LastName, "Gürbüz")
                 .AddParameter(u => u.EmailConfirm, true)

@@ -37,7 +37,7 @@ namespace FluentEntity_ConsoleApp.FEntity
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
 
             if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
-
+            if (propertyInfo.GetType() != value.GetType()) ;
             propertyInfo.SetValue(entity, value);
         }
     }
