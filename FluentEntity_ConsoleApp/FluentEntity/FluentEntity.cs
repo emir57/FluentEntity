@@ -23,7 +23,7 @@ namespace FluentEntity_ConsoleApp.FluentEntity
 
         public T GetEntity()
         {
-            throw new NotImplementedException();
+            return entity;
         }
     }
 }
