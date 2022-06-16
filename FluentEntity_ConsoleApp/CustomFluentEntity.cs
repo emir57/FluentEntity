@@ -20,7 +20,7 @@ namespace FluentEntity_ConsoleApp
 
         public override FluentEntityBase<T> AddParameter<P>(Expression<Func<T, P>> exp, object value)
         {
-            //custom settings or validation
+            //custom settings
             if (value.GetType() == typeof(int))
                 Console.WriteLine($"integer--{value}--");
             if(value.GetType() == typeof(string))
