@@ -18,26 +18,27 @@ namespace FluentEntity_ConsoleApp.FEntity
         public virtual FluentEntityBase<T> AddParameter<P>(Expression<Func<T, P>> exp, object value)
         {
             string propertyName = (exp.Body as MemberExpression).Member.Name;
-            PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
-
-            if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
-
-            propertyInfo.SetValue(entity, value);
+            SetProperty(propertyName, value);
             return this;
         }
         public virtual FluentEntityBase<T> AddParameter(string propertyName, object value)
         {
-            PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
-
-            if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
-
-            propertyInfo.SetValue(entity, value);
+            SetProperty(propertyName, value);
             return this;
         }
 
         public T GetEntity()
         {
             return entity;
+        }
+
+        protected void SetProperty(string propertyName, object value)
+        {
+            PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
+
+            if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
+
+            propertyInfo.SetValue(entity, value);
         }
     }
 }
