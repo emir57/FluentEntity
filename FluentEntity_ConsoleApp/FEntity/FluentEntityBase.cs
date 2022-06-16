@@ -1,4 +1,4 @@
-﻿using FluentEntity_ConsoleApp.FluentExceptions;
+﻿using FluentEntity_ConsoleApp.FEntity.FluentExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
