@@ -62,7 +62,7 @@ namespace FluentEntity_ConsoleApp.FEntity
         }
 
         /// <summary>
-        /// return entity with values
+        /// returns the entity with values
         /// </summary>
         /// <returns></returns>
         public T GetEntity() => _entity;
