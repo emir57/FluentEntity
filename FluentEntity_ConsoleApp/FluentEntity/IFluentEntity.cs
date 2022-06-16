@@ -5,9 +5,9 @@ using System.Text;
 
 namespace FluentEntity_ConsoleApp.FluentEntity
 {
-    public interface IFluenEntity<T>
+    public interface IFluentEntity<T>
     {
-        IFluenEntity<T> AddParameter<P>(Expression<Func<T, P>> exp, object value);
+        IFluentEntity<T> AddParameter<P>(Expression<Func<T, P>> exp, object value);
         T GetEntity();
     }
 }
