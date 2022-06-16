@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace FluentEntity_ConsoleApp.FluentEntity
+namespace FluentEntity_ConsoleApp.FEntity
 {
     public class FluentEntity<T> : IFluentEntity<T>
         where T : class, new()

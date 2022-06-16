@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace FluentEntity_ConsoleApp.FluentEntity
+namespace FluentEntity_ConsoleApp.FEntity
 {
     public interface IFluentEntity<T>
         where T : class, new()
