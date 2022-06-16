@@ -15,6 +15,8 @@ namespace FluentEntity_ConsoleApp
                 .AddParameter(u => u.CreatedDate, DateTime.Now)
                 .AddParameter(u => u.UpdatedDate, DateTime.Now.AddMinutes(5))
                 .GetEntity();
+            user = new FluentEntity<User>(user)
+                .
             Console.WriteLine($"{user.Id} {user.FirstName} {user.LastName}\n{user.EmailConfirm}\n{user.CreatedDate}\n{user.UpdatedDate}");
         }
     }
