@@ -21,7 +21,7 @@ namespace FluentEntity_ConsoleApp.FEntity
             propertyInfo.SetValue(entity, value);
             return this;
         }
-        public virtual FluentEntityBase<T> AddParameter<P>(string propertyName, object value)
+        public virtual FluentEntityBase<T> AddParameter(string propertyName, object value)
         {
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
             propertyInfo.SetValue(entity, value);
