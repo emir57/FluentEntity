@@ -7,7 +7,7 @@ namespace FluentEntity_ConsoleApp.FluentExceptions
 {
     public class FluentException : Exception
     {
-        public FluentException() : base("FluentEntity Exception")
+        public FluentException() : base()
         {
         }
 

@@ -20,7 +20,7 @@ namespace FluentEntity_ConsoleApp.FEntity
             string propertyName = (exp.Body as MemberExpression).Member.Name;
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
 
-            if (propertyInfo == null) throw new FluentException("Property Not Found");
+            if (propertyInfo == null) throw new FluentException();
 
             propertyInfo.SetValue(entity, value);
             return this;
