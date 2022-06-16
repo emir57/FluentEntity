@@ -32,6 +32,12 @@ namespace FluentEntity_ConsoleApp.FEntity
             SetProperty(propertyName, value);
             return this;
         }
+        /// <summary>
+        /// property name set value
+        /// </summary>
+        /// <param name="propertyName">Property Name</param>
+        /// <param name="value">Value</param>
+        /// <returns></returns>
         public virtual FluentEntityBase<T> AddParameter(string propertyName, object value)
         {
             SetProperty(propertyName, value);
