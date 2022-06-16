@@ -13,9 +13,9 @@ namespace FluentEntity_ConsoleApp
         {
             //custom settings or validation
             if (value.GetType() == typeof(int))
-            {
-                Console.WriteLine($"--{value}--");
-            }
+                Console.WriteLine($"integer--{value}--");
+            if(value.GetType() == typeof(string))
+                Console.WriteLine($"string--{value}--");
             return base.AddParameter(exp, value);
         }
     }
