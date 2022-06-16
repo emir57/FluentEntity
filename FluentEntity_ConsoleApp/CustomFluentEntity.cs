@@ -10,6 +10,14 @@ namespace FluentEntity_ConsoleApp
     public class CustomFluentEntity<T> : FluentEntityBase<T>
         where T : class, new()
     {
+        public CustomFluentEntity()
+        {
+        }
+
+        public CustomFluentEntity(T entity) : base(entity)
+        {
+        }
+
         public override FluentEntityBase<T> AddParameter<P>(Expression<Func<T, P>> exp, object value)
         {
             //custom settings or validation
