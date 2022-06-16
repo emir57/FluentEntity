@@ -41,7 +41,7 @@ namespace FluentEntity_ConsoleApp.FEntity
             //    throw new ArgumentFluentEntityException($"propertyType: {propertyInfo.PropertyType} valueType: {value.GetType()} cannot ne converted");
 
         }
-        protected void CheckExceptions(PropertyInfo propertyInfo)
+        protected virtual void CheckExceptions(PropertyInfo propertyInfo)
         {
             if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
         }
