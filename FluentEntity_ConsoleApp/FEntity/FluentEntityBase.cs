@@ -27,17 +27,13 @@ namespace FluentEntity_ConsoleApp.FEntity
             return this;
         }
 
-        public T GetEntity()
-        {
-            return entity;
-        }
+        public T GetEntity() => entity;
 
         protected void SetProperty(string propertyName, object value)
         {
             PropertyInfo propertyInfo = entity.GetType().GetProperty(propertyName);
             CheckExceptions(propertyInfo);
             propertyInfo.SetValue(entity, value);
-
         }
         protected virtual void CheckExceptions(PropertyInfo propertyInfo)
         {
