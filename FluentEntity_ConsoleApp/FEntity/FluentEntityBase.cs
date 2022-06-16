@@ -19,8 +19,9 @@ namespace FluentEntity_ConsoleApp.FEntity
         {
             _entity = entity;
         }
+
         /// <summary>
-        /// selected property set value
+        /// assigns a value to the selected property
         /// </summary>
         /// <typeparam name="P">Property Type</typeparam>
         /// <param name="exp">Expression</param>
@@ -32,8 +33,9 @@ namespace FluentEntity_ConsoleApp.FEntity
             SetProperty(propertyName, value);
             return this;
         }
+
         /// <summary>
-        /// property name set value
+        /// assigns value by property name
         /// </summary>
         /// <param name="propertyName">Property Name</param>
         /// <param name="value">Value</param>
@@ -43,6 +45,7 @@ namespace FluentEntity_ConsoleApp.FEntity
             SetProperty(propertyName, value);
             return this;
         }
+
         /// <summary>
         /// assigns values to all properties of the selected type
         /// </summary>
@@ -57,18 +60,29 @@ namespace FluentEntity_ConsoleApp.FEntity
                     propertyInfo.SetValue(_entity, value);
             return this;
         }
+
         /// <summary>
         /// return entity with values
         /// </summary>
         /// <returns></returns>
         public T GetEntity() => _entity;
 
+        /// <summary>
+        /// assigns value to property
+        /// </summary>
+        /// <param name="propertyName">Property Name</param>
+        /// <param name="value">Value</param>
         protected virtual void SetProperty(string propertyName, object value)
         {
             PropertyInfo propertyInfo = _entity.GetType().GetProperty(propertyName);
             CheckExceptions(propertyInfo);
             propertyInfo.SetValue(_entity, value);
         }
+        /// <summary>
+        /// checks for errors while assigning value to property
+        /// </summary>
+        /// <param name="propertyInfo">Property Info</param>
+        /// <exception cref="PropertyNotFoundFluentEntityException"></exception>
         protected virtual void CheckExceptions(PropertyInfo propertyInfo)
         {
             if (propertyInfo == null) throw new PropertyNotFoundFluentEntityException();
