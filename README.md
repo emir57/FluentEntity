@@ -13,6 +13,7 @@ User user = new FluentEntity<User>()
 
 Update User
 ```C#
+User user = new User();
 user = new FluentEntity<User>(user)
                 .AddParameter(x => x.FirstName, "Emir")
                 .AddParameter(x => x.LastName, "Gürbüz")
