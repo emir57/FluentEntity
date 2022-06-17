@@ -11,7 +11,7 @@ namespace FluentEntity_ConsoleApp
             User user = new FluentEntity<User>()
                 .AddParameter("Id", 1)
                 .AddParameters<string>("bu bir string")
-                .AddParameter(u => u.EmailConfirm, true)
+                .AddParameter(u => u.EmailConfirm, "asd")
                 .AddParameter(u => u.CreatedDate, DateTime.Now)
                 .AddParameter(u => u.UpdatedDate, DateTime.Now.AddMinutes(5))
                 .GetEntity();
